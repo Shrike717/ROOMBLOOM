@@ -11,13 +11,17 @@ require "open-uri"
 Item.destroy_all
 User.destroy_all
 
-user1 = User.new(email: "user1@gmx.de", password: "123456") # We need different users for testing
+puts "Creating two users....."
+
+user1 = User.new(email: "user1@gmx.de", password: "123456", username: "User1") # We need different users for testing
 user1.photo.attach(io: File.open("app/assets/images/user1_avatar.png"), filename: "user1_avatar.png", content_type: "image/png")
 user1.save!
 
-user2 = User.new(email: "user2@gmx.de", password: "123456") # We need different users for testing
+user2 = User.new(email: "user2@gmx.de", password: "123456", username: "User2") # We need different users for testing
 user2.photo.attach(io: File.open("app/assets/images/user2_avatar.png"), filename: "user2_avatar.png", content_type: "image/png")
 user2.save!
+
+puts "Creating items...."
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855932/01_sofas/01_Sofas_09_Ericson_LS_1000px_dgsvz9.png")
 item = Item.new(name: "01 Sofas Ericson", category: "Sofas")

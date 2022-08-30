@@ -87,27 +87,27 @@ puts "Creating Rugs..."
 # RUGS
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855999/03_rugs/03_Rugs_04_Kayser_LS_1000px_u7ncu3.png")
-item = Item.new(name: "02 Chair Kayser", category: "Chairs")
+item = Item.new(name: "02 Rug Kayser", category: "Rugs")
 item.photo.attach(io: file, filename: "03_Rugs_04_Kayser_LS_1000px_u7ncu3.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855996/03_rugs/03_Rugs_06_Tova_LS_1000px_iwgusg.png")
-item = Item.new(name: "02 Chair Tova", category: "Chairs")
+item = Item.new(name: "02 Rug Tova", category: "Rugs")
 item.photo.attach(io: file, filename: "03_Rugs_06_Tova_LS_1000px_iwgusg.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855995/03_rugs/03_Rugs_05_Amira_LS_1000px_ipla5o.png")
-item = Item.new(name: "02 Chair Amira", category: "Chairs")
+item = Item.new(name: "02 Rug Amira", category: "Rugs")
 item.photo.attach(io: file, filename: "05_Amira_LS_1000px_ipla5o.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855995/03_rugs/03_Rugs_09_Ona_LS_1000px_k3vwsc.png")
-item = Item.new(name: "02 Chair Ona", category: "Chairs")
+item = Item.new(name: "02 Rug Ona", category: "Rugs")
 item.photo.attach(io: file, filename: "03_Rugs_09_Ona_LS_1000px_k3vwsc.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855995/03_rugs/03_Rugs_10_Luco_LS_1000px_sytugj.png")
-item = Item.new(name: "02 Chair Luco", category: "Chairs")
+item = Item.new(name: "02 Rug Luco", category: "Rugs")
 item.photo.attach(io: file, filename: "03_Rugs_10_Luco_LS_1000px_sytugj.png", content_type: "image/png")
 item.save
 
@@ -115,10 +115,59 @@ puts "Creating Coffee Tables..."
 
 # COFFEE TABLES
 
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_05_Cow_Hide_LS_1000px_gyo62y.png")
+item = Item.new(name: "02 Coffee Table Cow", category: "Coffee Tables")
+item.photo.attach(io: file, filename: "04_Coffee-Tables_05_Cow_Hide_LS_1000px_gyo62y.png", content_type: "image/png")
+item.save
 
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_03_Liam_LS_1000px_nntpo5.png")
+item = Item.new(name: "02 Coffee Table Liam", category: "Coffee Tables")
+item.photo.attach(io: file, filename: "04_Coffee-Tables_03_Liam_LS_1000px_nntpo5.png", content_type: "image/png")
+item.save
 
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_06_Gibson_LS_1000px_iqcgun.png")
+item = Item.new(name: "02 Coffee Table Gibson", category: "Coffee Tables")
+item.photo.attach(io: file, filename: "04_Coffee-Tables_06_Gibson_LS_1000px_iqcgun.png", content_type: "image/png")
+item.save
 
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_07_Williams_LS_1000px_uwz2vo.png")
+item = Item.new(name: "02 Coffee Table Williams", category: "Coffee Tables")
+item.photo.attach(io: file, filename: "04_Coffee-Tables_07_Williams_LS_1000px_uwz2vo.png", content_type: "image/png")
+item.save
 
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_10-Kavala_LS_1000px_lvbtv4.png")
+item = Item.new(name: "02 Coffee Table Kavala", category: "Coffee Tables")
+item.photo.attach(io: file, filename: "04_Coffee-Tables_10-Kavala_LS_1000px_lvbtv4.png", content_type: "image/png")
+item.save
+
+puts "Creating Lights..."
+
+# LIGHTS
+
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856046/05_lights/05_Lights_11_Orikata_LS_1000px_rutmk0.png")
+item = Item.new(name: "02 Light Orikata", category: "Lights")
+item.photo.attach(io: file, filename: "05_Lights_11_Orikata_LS_1000px_rutmk0.png", content_type: "image/png")
+item.save
+
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856045/05_lights/05_Lights_08_Fairbanks_LS_1000px_f5vgg2.png")
+item = Item.new(name: "02 Light Fairbanks", category: "Lights")
+item.photo.attach(io: file, filename: "05_Lights_08_Fairbanks_LS_1000px_f5vgg2.png", content_type: "image/png")
+item.save
+
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856045/05_lights/05_Lights_04_Cloak_LS_1000px_apcoai.png")
+item = Item.new(name: "02 Light Cloak", category: "Lights")
+item.photo.attach(io: file, filename: "05_Lights_04_Cloak_LS_1000px_apcoai.png", content_type: "image/png")
+item.save
+
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856044/05_lights/05_Lights_10_Lane_LS_1000px_pz4iqq.png")
+item = Item.new(name: "02 Light Lane", category: "Lights")
+item.photo.attach(io: file, filename: "05_Lights_10_Lane_LS_1000px_pz4iqq.png", content_type: "image/png")
+item.save
+
+file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856044/05_lights/05_Lights_03_Cedric_LS_1000px_cz9eof.png")
+item = Item.new(name: "02 Light Cedric", category: "Lights")
+item.photo.attach(io: file, filename: "05_Lights_03_Cedric_LS_1000px_cz9eof.png", content_type: "image/png")
+item.save
 
 # In your moodboards controller, new action:
 # @random_sofa_item = Item.where(category: "sofa").sample

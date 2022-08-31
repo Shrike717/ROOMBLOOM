@@ -17,4 +17,8 @@ class MoodboardsController < ApplicationController
   def new
     @random_sofas_item = Item.where(category: "Sofas").sample
   end
+
+  def create
+    
+  end
 end

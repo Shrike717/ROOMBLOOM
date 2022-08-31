@@ -1,9 +1,12 @@
 <% @moodboards.each do |moodboard| %>
   <p class="moodboard-name"><%= moodboard.name %></p>
-
-  <div class=""
-  style="background-image: url('<%= cl_image_path @item.photo.key, height: 300, crop: :fill %>')"
->
-  Cool article
-</div>
 <% end %>
+
+  <%# only test code %>
+
+<!--
+  <div class="sofa-box" style="background-image: url('<%= cl_image_path @random_sofas_item.photo.key, height: 300, crop: :fill %>')"></div>
+  <div class="chair-box" style="background-image: url('<%= cl_image_path @random_chairs_item.photo.key, height: 300, crop: :fill %>')"></div>
+  <div class="rug-box" style="background-image: url('<%= cl_image_path @random_rugs_item.photo.key, height: 300, crop: :fill %>')"></div>
+
+>

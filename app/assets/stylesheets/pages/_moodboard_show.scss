@@ -7,38 +7,47 @@
 }
 
 .lamp{
-  background: yellow;
+  // background: yellow;
+  background-size: contain;
+  background-repeat: no-repeat;
   grid-column: 1 /span 4;
   grid-row: 1 /span 9;
   z-index: 0;
 }
 
 .rug{
-
-  background: red;
+  // background: red;
+  background-size: contain;
+  background-repeat: no-repeat;
   grid-column: 5 /span 10;
   grid-row: 3 /span 16;
   z-index: 0;
 }
 
 .sofa{
-  background: green;
+  // background: green;
+  background-size: contain;
+  background-repeat: no-repeat;
   grid-column: 11 /span 18;
   grid-row: 4 /span 7;
   z-index: 1;
 }
 
 .side-table{
-  background: brown;
+  // background: brown;
+  background-size: contain;
+  background-repeat: no-repeat;
   grid-column: 13 /span 17;
   grid-row: 14 /span 16;
   z-index: 2;
 }
 
 .chair{
-  background: black;
-  z-index: 5;
-  color: white;
+  // background: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  // z-index: 5;
+  // color: white;
   grid-column: 1 /span 5;
   grid-row: 15 /span 20;
   z-index: 3;

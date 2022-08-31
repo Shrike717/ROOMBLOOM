@@ -2,11 +2,13 @@
   <p class="moodboard-name"><%= moodboard.name %></p>
 <% end %>
 
-  <%# only test code %>
+<%= @pin.pinned %>
 
-<!--
-  <div class="sofa-box" style="background-image: url('<%= cl_image_path @random_sofas_item.photo.key, height: 300, crop: :fill %>')"></div>
-  <div class="chair-box" style="background-image: url('<%= cl_image_path @random_chairs_item.photo.key, height: 300, crop: :fill %>')"></div>
-  <div class="rug-box" style="background-image: url('<%= cl_image_path @random_rugs_item.photo.key, height: 300, crop: :fill %>')"></div>
+<%= form_for @pin do |f| %>
+  <%= f.submit %>
+<% end %>
 
->
+
+<button class="btn btn-primary">Pin</button>
+
+  <%# only test code for testing pin buttons true/false%>

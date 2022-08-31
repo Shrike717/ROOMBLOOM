@@ -1,4 +1,6 @@
 class MoodboardsController < ApplicationController
+  before_action :set_moodboard, only: %i[ show new create edit update destroy]
+
   def index
     # @moodboards = Moodboard.all
     # @random_sofas_item = Item.where(category: "Sofas").sample
@@ -15,10 +17,31 @@ class MoodboardsController < ApplicationController
   end
 
   def new
-    @random_sofas_item = Item.where(category: "Sofas").sample
+    # @random_sofas_item = Item.where(category: "Sofas").sample
+    @moodboard = Moodboard.new
   end
 
   def create
-    
+    @moodboard = Moodboard.new(moodboard_params)
+    @moodboard.user = current_user
+
+    if @rmoodboard.save
+      redirect_to moodboard_path(@moodboard)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
+  private
+
+  def set_moodboard
+    @moodboard = Moodboard.find(params[:moodboard_id])
+   end
+
+
+ def moodboard_params
+   params.require(:moodboard).permit(:name)
+ end
+
+
 end

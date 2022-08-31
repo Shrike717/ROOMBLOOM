@@ -1,3 +1,49 @@
+.whole-page {
+display: flex;
+}
+
+.left-side {
+width: 1fr;
+margin-right: 80px;
+background: #252329;
+color: white;
+padding: 48px;
+}
+
+
+#title-moodboard {
+  margin-top: 80px;
+}
+
+// .items {
+// display: grid;
+// }
+
+.pin-btn {
+  padding: 8px;
+  background-color: white;
+  color:#252329;
+  border-radius: 5px;
+  text-decoration: none;
+  width: max-content;
+}
+
+.item-image {
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.item {
+ display: grid;
+ grid-template-columns: 1fr 2fr 1fr;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.right-side {
+  width: 3fr;
+  }
+
 .item-wrapper {
   width: 700px;
   height: 500px;
@@ -11,7 +57,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   grid-column: 1 /span 4;
-  grid-row: 1 /span 9;
+  grid-row: 1 /span 11;
   z-index: 0;
 }
 
@@ -28,8 +74,8 @@
   // background: green;
   background-size: contain;
   background-repeat: no-repeat;
-  grid-column: 11 /span 18;
-  grid-row: 4 /span 7;
+  grid-column: 10 /span 18;
+  grid-row: 5 /span 8;
   z-index: 1;
 }
 
@@ -37,8 +83,8 @@
   // background: brown;
   background-size: contain;
   background-repeat: no-repeat;
-  grid-column: 13 /span 17;
-  grid-row: 14 /span 16;
+  grid-column: 12 /span 6;
+  grid-row: 14 /span 6;
   z-index: 2;
 }
 
@@ -48,13 +94,44 @@
   background-repeat: no-repeat;
   // z-index: 5;
   // color: white;
-  grid-column: 1 /span 5;
-  grid-row: 15 /span 20;
+  grid-column: 2 /span 8;
+  grid-row: 13 /span 20;
   z-index: 3;
 }
 
 
 
 .shuffle-btn{
-  background: blue;
+  background: rgb(199, 199, 199);
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+
+ &:hover {
+color: white;
+background: black;
+  }
+}
+
+
+.save-btn{
+  background: rgb(106, 118, 255);
+  display: block;
+  color: rgb(255, 255, 255);
+  padding: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+
+ &:hover {
+color: white;
+background: rgb(56, 63, 146);
+  }
 }

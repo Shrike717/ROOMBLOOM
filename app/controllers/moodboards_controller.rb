@@ -2,10 +2,13 @@ class MoodboardsController < ApplicationController
   before_action :set_moodboard, only: %i[ show edit update destroy ]
 
   def index
-     @moodboards = Moodboard.all
-     @random_sofas_item = Item.where(category: "Sofas").sample
-     @random_chairs_item = Item.where(category: "Chairs").sample
-     @random_rugs_item = Item.where(category: "Rugs").sample
+
+    @moodboards = Moodboard.all
+    @pin = Pin.find(1)
+    # @random_sofas_item = Item.where(category: "Sofas").sample
+    # @random_chairs_item = Item.where(category: "Chairs").sample
+    # @random_rugs_item = Item.where(category: "Rugs").sample
+
   end
 
   def show

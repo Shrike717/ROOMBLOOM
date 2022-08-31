@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :moodboards, only: [:index, :show, :create] do
     resources :pins, only: :create
+    get "shuffle", to: "moodboards#shuffle", as: "shuffle"
   end
 
   resources :pins, only: :destory

@@ -1,5 +1,7 @@
 class PinsController < ApplicationController
 
+  # has  to be changed to update
+
   def create
     @pin = Pin.new(pin_params)
     @moodboard = Moodboard.find(params[:moodboard_id])
@@ -11,6 +13,9 @@ class PinsController < ApplicationController
       render "moodboards/show", status: :unprocessable_entity
     end
   end
+
+
+
 
   private
 

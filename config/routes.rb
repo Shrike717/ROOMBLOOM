@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
-  resources :moodboards, only: [:index, :show] do
+
+  resources :moodboards, only: [:index, :show, :create] do
     resources :pins, only: :create
+    get "shuffle", to: "moodboards#shuffle", as: "shuffle"
   end
-  
+
   resources :pins, only: :destory
 end

@@ -71,6 +71,7 @@
             <%# sofa %>
           </div>
 
+
           <div class="chair" style="background-image: url('<%= cl_image_path @random_chairs_item.photo.key, height: 1000, crop: :fill %>')">
             <%# chair %>
           </div>
@@ -83,7 +84,7 @@
       </div>
     </div>
 
-    <%= link_to "Shuffle", @new_moodboard_path, class: "shuffle-btn" %>
+    <%= link_to "Shuffle", moodboard_shuffle_path(@moodboard), class: "shuffle-btn" %>
     <%= link_to "Save", "?", class: "save-btn" %>
 
   </div>

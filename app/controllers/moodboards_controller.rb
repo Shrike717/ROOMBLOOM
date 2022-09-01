@@ -3,7 +3,7 @@ class MoodboardsController < ApplicationController
 
   def index
     @moodboards = Moodboard.all # gets all moodboards
-    @pin = Pin.find(1) # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
+    @pin = @moodboards.last.pins.first # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
   end
 
   def show
@@ -26,16 +26,6 @@ class MoodboardsController < ApplicationController
     end
   end
 
-  def shuffle
-    @moodboard = Moodboard.find(params[:moodboard_id]) # Gets the id of the actual moodboard last created. The key is moodboard_id not just id
-    pins = @moodboard.pins.where(pinned: false) # Gets all pins with item_id and moodboard_id where pinned = false. When newly created moodboard its 5 pins
-    pins.each do |pin|
-      pin.item = Item.where(category: pin.item.category).sample # Checks categories of unpinned items, finds these categories in the DB and shuffles theem.
-      pin.save
-    end
-    redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
-
-  end
 
   def new
     # @random_sofas_item = Item.where(category: "Sofas").sample
@@ -61,6 +51,16 @@ class MoodboardsController < ApplicationController
     else
       redirect_to root_path, status: :unprocessable_entity
     end
+  end
+
+  def shuffle
+    @moodboard = Moodboard.find(params[:moodboard_id]) # Gets the id of the actual moodboard last created. The key is moodboard_id not just id
+    pins = @moodboard.pins.where(pinned: false) # Gets all pins with item_id and moodboard_id where pinned = false. When newly created moodboard its 5 pins
+    pins.each do |pin|
+      pin.item = Item.where(category: pin.item.category).sample # Checks categories of unpinned items, finds these categories in the DB and shuffles theem.
+      pin.save
+    end
+    redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
   end
 
   private

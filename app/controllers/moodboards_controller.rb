@@ -3,25 +3,29 @@ class MoodboardsController < ApplicationController
 
   def index
     @moodboards = Moodboard.all # gets all moodboards
-    @pin = @moodboards.last.pins.first # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
+    # @pin = @moodboards.last.pins.first # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
   end
 
   def show
     items = @moodboard.items # Getting all 5 items belonging to a created moodboard
 
-    @random_sofas_item = items.find do |item| # Getting the id of the item in category Sofas. This item is displayed on showpage
+    @sofas_item = items.find do |item| # Getting the id of the item in category Sofas. This item is displayed on showpage
       item.category == "Sofas"
     end
-    @random_chairs_item = items.find do |item| # Getting the id of the item in category Chairs. This item is displayed on showpage
+
+    @chairs_item = items.find do |item| # Getting the id of the item in category Chairs. This item is displayed on showpage
       item.category == "Chairs"
     end
-    @random_rugs_item = items.find do |item| # Getting the id of the item in category Rugs. This item is displayed on showpage
+
+    @rugs_item = items.find do |item| # Getting the id of the item in category Rugs. This item is displayed on showpage
       item.category == "Rugs"
     end
-    @random_coffee_tables_item = items.find do |item| # Getting the id of the item in category Coffee Tables. This item is displayed on showpage
+
+    @coffee_tables_item = items.find do |item| # Getting the id of the item in category Coffee Tables. This item is displayed on showpage
       item.category == "Coffee Tables"
     end
-    @random_lights_item = items.find do |item| # Getting the id of the item in category Lights. This item is displayed on showpage
+
+    @lights_item = items.find do |item| # Getting the id of the item in category Lights. This item is displayed on showpage
       item.category == "Lights"
     end
   end
@@ -37,16 +41,7 @@ class MoodboardsController < ApplicationController
     @moodboard.name = Moodboard.generate_name # As a name is needed for mb creation we give it a random name. Method is in Model Moodboard file. User should name it later
     @moodboard.user = current_user # A moodboard neeeds a user id to be created. This connects moodboard to current logged in user.
     if @moodboard.save
-      @sofa = Item.where(category: "Sofas").sample # Gets the item with id, name and category which is randomly picked when hitting the start shufflin button on the homepage
-      @chair = Item.where(category: "Chairs").sample
-      @rug = Item.where(category: "Rugs").sample
-      @coffee_table = Item.where(category: "Coffee Tables").sample
-      @light = Item.where(category: "Lights").sample
-      Pin.create(item: @sofa, moodboard: @moodboard) # Creates a pin with item_id and moodboard_id
-      Pin.create(item: @chair, moodboard: @moodboard)
-      Pin.create(item: @rug, moodboard: @moodboard)
-      Pin.create(item: @coffee_table, moodboard: @moodboard)
-      Pin.create(item: @light, moodboard: @moodboard)
+      @moodboard.generate_pins
       redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
     else
       redirect_to root_path, status: :unprocessable_entity

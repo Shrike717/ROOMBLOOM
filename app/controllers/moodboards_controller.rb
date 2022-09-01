@@ -66,7 +66,7 @@ class MoodboardsController < ApplicationController
     if @moodboard.update(moodboard_params)
       redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
     else
-      render "moodboards/index", status: :unprocessable_entity # change to show
+      render "moodboards/show", status: :unprocessable_entity # change to show
     end
 
   end

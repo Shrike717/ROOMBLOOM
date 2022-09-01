@@ -54,13 +54,42 @@
             <i class="fa-sharp fa-solid fa-shuffle"></i>
           </span>
         <% end %>
-           <!-- With this path rails knows to hit the shuffle method on moodboards controller-->
-        <%= link_to moodboard_shuffle_path(@moodboard), class: "save-btn" do %>
+
+        <button type="button" class="save-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Save
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <%= simple_form_for @moodboard do |f| %>
+                <div class="modal-body">
+                  <%= f.input :name, input_html: { value: "" } %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <%= f.submit "save moodboard", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <!-- <%= link_to moodboard_shuffle_path(@moodboard), class: "save-btn" do %>
           <span>
               Save
             <i class="fa-regular fa-heart"></i>
-          </span>
+          </span> -->
+
         <% end %>
+
+
+
 
       </div>
 

@@ -6,85 +6,42 @@
     <p>Click the add button to add a pin</p>
 
     <div class="items">
-
-      <div class="item">
-        <div class="item-image-wrapper">
-          <%= cl_image_tag @random_lights_item.photo.key, class: "item-image" %>
-        </div>
-        <div class="item-info">
-          <div>Product name</div>
-        </div>
-        <%= link_to "Pin", "?", class: "pin-btn" %>
-      </div>
-
-      <div class="item">
-        <div class="item-image-wrapper">
-          <%= cl_image_tag @random_rugs_item.photo.key, class: "item-image" %>
-        </div>
-        <div class="item-info">
-          <div>Product name</div>
-        </div>
-        <%= link_to "Pin", "?", class: "pin-btn" %>
-      </div>
-
-      <div class="item">
-        <div class="item-image-wrapper">
-          <%= cl_image_tag @random_sofas_item.photo.key, class: "item-image" %>
-        </div>
+      <% @moodboard.items.sort.each do |item| %>
+        <% pin = item.moodboard_pin(@moodboard) %>
+        <div class="item">
+          <div class="item-image-wrapper">
+            <%= cl_image_tag item.photo.key, class: "item-image" %>
+          </div>
           <div class="item-info">
-            <div>Product name</div>
-
+            <div><%= item.pretty_name %></div>
           </div>
-         <%= link_to "Pin", "?", class: "pin-btn" %>
-      </div>
-
-      <div class="item">
-        <div class="item-image-wrapper">
-          <%= cl_image_tag @random_chairs_item.photo.key, class: "item-image" %>
+         <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "pin-btn" : "unpinned" %>
         </div>
-           <div class="item-info">
-            <div>Product name</div>
-
-          </div>
-         <%= link_to "Pin", "?", class: "pin-btn" %>
-      </div>
-
-      <div class="item">
-        <div class="item-image-wrapper">
-          <%= cl_image_tag @random_coffee_tables_item.photo.key, class: "item-image" %>
-        </div>
-           <div class="item-info">
-            <div>Product name</div>
-
-          </div>
-         <%= link_to "Pin", "?", class: "pin-btn" %>
-      </div>
-
+      <% end %>
     </div>
-
   </div>
 
   <div class="right-side">
 
     <div class="item-wrapper">
-      <div class="lamp m-4" style="background-image: url('<%= cl_image_path @random_lights_item.photo.key, height: 1000, crop: :fill %>')">
+      <div class="lamp m-4" style="background-image: url('<%= cl_image_path @lights_item.photo.key, height: 1000, crop: :fill %>')">
         <%# light %>
       </div>
 
-      <div class="rug" style="background-image: url('<%= cl_image_path @random_rugs_item.photo.key, height: 1000, crop: :fill %>')">
+      <div class="rug" style="background-image: url('<%= cl_image_path @rugs_item.photo.key, height: 1000, crop: :fill %>')">
         <%# rug %>
       </div>
 
-      <div class="sofa" style="background-image: url('<%= cl_image_path @random_sofas_item.photo.key, height: 1000, crop: :fill %>')">
+      <div class="sofa" style="background-image: url('<%= cl_image_path @sofas_item.photo.key, height: 1000, crop: :fill %>')">
         <%# sofa %>
       </div>
 
 
-      <div class="chair" style="background-image: url('<%= cl_image_path @random_chairs_item.photo.key, height: 1000, crop: :fill %>')">
+      <div class="chair" style="background-image: url('<%= cl_image_path @chairs_item.photo.key, height: 1000, crop: :fill %>')">
         <%# chair %>
       </div>
 
-      <div class="side-table" style="background-image: url('<%= cl_image_path @random_coffee_tables_item.photo.key, height: 1000, crop: :fill %>')">
+      <div class="side-table" style="background-image: url('<%= cl_image_path @coffee_tables_item.photo.key, height: 1000, crop: :fill %>')">
         <%# side table %>
       </div>
 

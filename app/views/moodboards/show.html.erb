@@ -1,4 +1,4 @@
-<div class="whole-page container">
+<div class="whole-page">
 
   <div class="left-side">
     <h1 id="title-moodboard">Create <br> Moodboard</h1>
@@ -15,7 +15,7 @@
           <div class="item-info">
             <div><%= item.pretty_name %></div>
           </div>
-         <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "pin-btn" : "unpinned" %>
+         <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
         </div>
       <% end %>
     </div>
@@ -46,9 +46,23 @@
       </div>
 
     </div>
+      <div class="buttons">
 
-    <%= link_to "Shuffle", moodboard_shuffle_path(@moodboard), class: "shuffle-btn" %> <!-- With this path rails knows to hit the shuffle method on moodboards controller-->
-    <%= link_to "Save", "?", class: "save-btn" %>
+        <%= link_to moodboard_shuffle_path(@moodboard), class: "shuffle-btn" do %>
+          <span>
+              Shuffle
+            <i class="fa-sharp fa-solid fa-shuffle"></i>
+          </span>
+        <% end %>
+           <!-- With this path rails knows to hit the shuffle method on moodboards controller-->
+        <%= link_to moodboard_shuffle_path(@moodboard), class: "save-btn" do %>
+          <span>
+              Save
+            <i class="fa-regular fa-heart"></i>
+          </span>
+        <% end %>
+
+      </div>
 
   </div>
 </div>

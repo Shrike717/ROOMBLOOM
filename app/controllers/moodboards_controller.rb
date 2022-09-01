@@ -30,10 +30,10 @@ class MoodboardsController < ApplicationController
     @moodboard = Moodboard.find(params[:moodboard_id]) # Gets the id of the actual moodboard last created. The key is moodboard_id not just id
     pins = @moodboard.pins.where(pinned: false) # Gets all pins with item_id and moodboard_id where pinned = false. When newly created moodboard its 5 pins
     pins.each do |pin|
-      pin.item = Item.where(category: pin.item.category).sample # Shuffles somehow but i don't get this. Ask TA once again
+      pin.item = Item.where(category: pin.item.category).sample # Checks categories of unpinned items, finds these categories in the DB and shuffles theem.
       pin.save
     end
-    redirect_to moodboard_path(@moodboard) # Shows showpage again
+    redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
 
   end
 
@@ -52,12 +52,12 @@ class MoodboardsController < ApplicationController
       @rug = Item.where(category: "Rugs").sample
       @coffee_table = Item.where(category: "Coffee Tables").sample
       @light = Item.where(category: "Lights").sample
-      Pin.create(item: @sofa, moodboard: @moodboard)
+      Pin.create(item: @sofa, moodboard: @moodboard) # Creates a pin with item_id and moodboard_id
       Pin.create(item: @chair, moodboard: @moodboard)
       Pin.create(item: @rug, moodboard: @moodboard)
       Pin.create(item: @coffee_table, moodboard: @moodboard)
       Pin.create(item: @light, moodboard: @moodboard)
-      redirect_to moodboard_path(@moodboard)
+      redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
     else
       redirect_to root_path, status: :unprocessable_entity
     end

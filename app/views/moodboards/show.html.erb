@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <%= link_to "Shuffle", moodboard_shuffle_path(@moodboard), class: "shuffle-btn" %>
+    <%= link_to "Shuffle", moodboard_shuffle_path(@moodboard), class: "shuffle-btn" %> <!-- With this path rails knows to hit the shuffle method on moodboards controller-->
     <%= link_to "Save", "?", class: "save-btn" %>
 
   </div>

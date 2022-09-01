@@ -3,6 +3,7 @@ class MoodboardsController < ApplicationController
 
   def index
     @moodboards = Moodboard.all # gets all moodboards
+    @moodboard = @moodboards.last
     # @pin = @moodboards.last.pins.first # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
   end
 
@@ -56,6 +57,18 @@ class MoodboardsController < ApplicationController
       pin.save
     end
     redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
+  end
+
+  def update
+    @moodboards = Moodboard.all # gets all moodboards
+    @moodboard.update(moodboard_params)
+    @moodboard.pins.update_all(pinned: true)
+    if @moodboard.update(moodboard_params)
+      redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
+    else
+      render "moodboards/index", status: :unprocessable_entity # change to show
+    end
+
   end
 
   private

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :moodboards, only: [:index, :show, :create] do
     resources :pins
-    get "shuffle", to: "moodboards#shuffle", as: "shuffle"
+    get "shuffle", to: "moodboards#shuffle", as: "shuffle" # A route was made to hit the custom shuffle method on moodboards controller.
   end
 
   resources :pins, only: [ :destroy, :update ]

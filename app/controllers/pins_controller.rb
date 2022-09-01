@@ -2,9 +2,7 @@ class PinsController < ApplicationController
 
   def update
     @pin = Pin.find(params[:id])
-    @pin.pinned = !@pin.pinned
-    # @moodboard = Moodboard.find(params[:moodboard_id])
-    # @pin.moodboard = @moodboard
+    @pin.pinned = !@pin.pinned # Toggles between truee and false
     if @pin.save
       redirect_to moodboards_path
     else

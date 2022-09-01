@@ -1,2 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
+
+  <%= f.submit "start shufflin a new moodboard" %>
+
+<% end %>

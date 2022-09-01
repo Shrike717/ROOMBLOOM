@@ -4,7 +4,7 @@ class PinsController < ApplicationController
     @pin = Pin.find(params[:id])
     @pin.pinned = !@pin.pinned # Toggles between truee and false
     if @pin.save
-      redirect_to moodboards_path
+      redirect_to moodboard_path(@pin.moodboard)
     else
       render "moodboards/show", status: :unprocessable_entity
     end

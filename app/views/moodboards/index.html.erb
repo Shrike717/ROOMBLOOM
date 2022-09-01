@@ -1,14 +1,12 @@
 <% @moodboards.each do |moodboard| %>
   <p class="moodboard-name"><%= moodboard.name %></p>
-<% end %>
 
-<%= @pin.pinned %>
+  <%= link_to @pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(moodboard, @pin), data: { turbo_method: :put }, class: @pin.pinned? ? "pin-btn" : "unpinned" %>
 
-<%= form_for @pin do |f| %>
-  <%= f.submit %>
 <% end %>
 
 
-<button class="btn btn-primary">Pin</button>
+
+
 
   <%# only test code for testing pin buttons true/false%>

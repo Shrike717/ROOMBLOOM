@@ -1,12 +1,31 @@
 <% @moodboards.each do |moodboard| %>
   <p class="moodboard-name"><%= moodboard.name %></p>
-
-  <%= link_to @pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(moodboard, @pin), data: { turbo_method: :put }, class: @pin.pinned? ? "pin-btn" : "unpinned" %>
-
 <% end %>
 
 
 
 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+ Save
+</button>
 
-  <%# only test code for testing pin buttons true/false%>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= simple_form_for @moodboard do |f| %>
+        <div class="modal-body">
+          <%= f.input :name, input_html: { value: "" } %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= f.submit "save moodboard", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

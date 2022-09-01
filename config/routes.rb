@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :moodboards, only: [:index, :show, :create] do
+  resources :moodboards, only: [:index, :show, :create, :update] do
     resources :pins
     get "shuffle", to: "moodboards#shuffle", as: "shuffle" # A route was made to hit the custom shuffle method on moodboards controller.
   end

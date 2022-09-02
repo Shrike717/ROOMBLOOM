@@ -17,8 +17,22 @@
   padding: 48px;
 }
 
+.container-wrapper {
+  background: #252329;
+  display: grid;
+  width: 800px;
+  padding: 5px 20px 20px 20px;
+  margin: 20px;
+}
 
+// .page-container{
+//   width: 800px;
+//   padding: 40px ;
+// }
 
+.container-item-wrapper{
+  display: inline-flex;
+}
 
 .moodboard {
   background: #252329;
@@ -27,6 +41,7 @@
 }
 .moodboard-name {
   margin: 0px;
+  padding-bottom: 16px;
 }
 .item-info {
   background: #252329;
@@ -35,6 +50,7 @@
 
 .item-image-wrapper {
   background: #252329;
+  width: 100%
 }
 
 .grid-container-element {

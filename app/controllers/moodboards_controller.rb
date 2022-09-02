@@ -64,7 +64,7 @@ class MoodboardsController < ApplicationController
     @moodboard.update(moodboard_params)
     @moodboard.pins.update_all(pinned: true)
     if @moodboard.update(moodboard_params)
-      redirect_to moodboard_path(@moodboard) # Shows showpage again. Therefore it hits show method again
+      redirect_to moodboards_path(@moodboard) # Shows showpage again. Therefore it hits show method again
     else
       render "moodboards/show", status: :unprocessable_entity # change to show
     end

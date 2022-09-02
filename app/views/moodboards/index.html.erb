@@ -1,15 +1,100 @@
 <% @moodboards.each do |moodboard| %>
-  <p class="moodboard-name"><%= moodboard.name %></p>
+
+<!--
+
+-->
+
+
+<!--
+First try
+  <div class="container wrapper">
+      <div class="container moodboard">
+        <h4 class="moodboard-name"><%= moodboard.name %></h4>
+      </div>
+    <% @moodboard.items.sort.each do |item| %>
+     <div class="item-image-wrapper">
+        <%= cl_image_tag item.photo.key, class: "item-image" %>
+     </div>
+      <div class="item-info">
+         <div><%= item.pretty_name %></div>
+     </div>
+    <% end %>
+  </div>
+
+-->
+
+<!--
+Second try
+
+-->
+
+ <div class="container wrapper">
+      <div class="container moodboard">
+        <h4 class="moodboard-name"><%= moodboard.name %></h4>
+      </div>
+      <div class="items">
+        <% @moodboard.items.sort.each do |item| %>
+          <% pin = item.moodboard_pin(@moodboard) %>
+          <div class="item">
+            <div class="item-image-wrapper">
+              <%= cl_image_tag item.photo.key, class: "item-image" %>
+            </div>
+            <div class="item-info">
+              <div><%= item.pretty_name %></div>
+            </div>
+
+        <% end %>
+      </div>
+    </div>
+</div>
+
+
 <% end %>
 
+<!--
+<div class="container">
+  <div class="grid-container-element">
+      <div class="grid-child-element purple">Grid Column 1</div>
+      <div class="grid-child-element green">Grid Column 2</div>
+  </div>
+</div>
+
+-->
 
 
 
+
+
+<!--
+  <div class="left-side">
+    <h1 id="title-moodboard">Create <br> Moodboard</h1>
+    <br>
+    <p>Click the add button to add a pin</p>
+
+    <div class="items">
+      <% @moodboard.items.sort.each do |item| %>
+        <% pin = item.moodboard_pin(@moodboard) %>
+        <div class="item">
+          <div class="item-image-wrapper">
+            <%= cl_image_tag item.photo.key, class: "item-image" %>
+          </div>
+          <div class="item-info">
+            <div><%= item.pretty_name %></div>
+          </div>
+         <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+-->
+
+<!--
+Modal
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Save
 </button>
 
-<!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -29,3 +114,5 @@
     </div>
   </div>
 </div>
+
+-->

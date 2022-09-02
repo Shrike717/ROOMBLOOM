@@ -1,0 +1,50 @@
+
+.whole-page {
+  display: flex;
+  gap: 64px;
+  width: 100%;
+  height: 100vh;
+  padding-right: 80px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  background: #252329;
+  color: white;
+  padding: 48px;
+}
+
+
+
+
+.moodboard {
+  background: #252329;
+  color: rgb(255, 255, 255);
+  margin-top: 16px;
+}
+.moodboard-name {
+  margin: 0px;
+}
+.item-info {
+  background: #252329;
+  color: rgb(255, 255, 255);
+}
+
+.item-image-wrapper {
+  background: #252329;
+}
+
+.grid-container-element {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  border: 1px solid black;
+  width: 100%;
+}
+.grid-child-element {
+  margin: 10px;
+  border: 1px solid red;
+}

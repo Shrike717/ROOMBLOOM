@@ -1,36 +1,27 @@
 
 <div class="page-container">
-  <div class="back-button">
-    <%= link_to moodboard_shuffle_path(@moodboard), class: "shuffle-btn" do %>
-            <span>
-              Back to Shufflle
-              <i class="fa-sharp fa-solid fa-shuffle"></i>
-            </span>
-          <% end %>
-  </div>
+  <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
+    <%= f.submit "start new moodboard", class: "hero-btn"%>
+  <% end %>
 
   <% @moodboards.each do |moodboard| %>
-
-
-
-  <div class="container-wrapper cards">
+    <div class="container-wrapper cards">
       <div class="container moodboard">
         <h4 class="moodboard-name"><%= moodboard.name %></h4>
       </div>
-    <% @moodboard.items.sort.each do |item| %>
-      <div class="container-item-wrapper">
-        <div class="item-image-wrapper">
-            <%= cl_image_tag item.photo.key, class: "item-image" %>
+      <% moodboard.items.sort.each do |item| %>
+        <div class="container-item-wrapper">
+          <div class="item-image-wrapper">
+              <%= cl_image_tag item.photo.key, class: "item-image" %>
+          </div>
+            <div class="item-info">
+              <div><%= item.pretty_name %></div>
+          </div>
         </div>
-          <div class="item-info">
-            <div><%= item.pretty_name %></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-
-
+  <% end %>
 
 </div>
 
@@ -38,8 +29,9 @@
 
 -->
 
-<!--
-Second try
+
+<%
+=begin %>
  <div class="container wrapper">
       <div class="container moodboard">
         <h4 class="moodboard-name"><%= moodboard.name %></h4>
@@ -60,9 +52,7 @@ Second try
     </div>
 </div>
 
--->
 
-<% end %>
 
 
 
@@ -131,3 +121,5 @@ Modal
 </div>
 
 -->
+<%
+=end %>

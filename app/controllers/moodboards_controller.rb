@@ -2,8 +2,8 @@ class MoodboardsController < ApplicationController
   before_action :set_moodboard, only: %i[ show edit update destroy ]
 
   def index
-    @moodboards = Moodboard.all # gets all moodboards
-    @moodboard = @moodboards.last
+    @moodboards = current_user.moodboards.order(updated_at: :desc) # gets all moodboards
+    @moodboard = Moodboard.new
     # @pin = @moodboards.last.pins.first # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
   end
 
@@ -64,7 +64,7 @@ class MoodboardsController < ApplicationController
     @moodboard.update(moodboard_params)
     @moodboard.pins.update_all(pinned: true)
     if @moodboard.update(moodboard_params)
-      redirect_to moodboards_path(@moodboard) # Shows showpage again. Therefore it hits show method again
+      redirect_to moodboards_path # Shows showpage again. Therefore it hits show method again
     else
       render "moodboards/show", status: :unprocessable_entity # change to show
     end

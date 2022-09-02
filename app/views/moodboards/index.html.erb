@@ -1,18 +1,19 @@
 
 <div class="page-container">
-
-  <%= link_to moodboard_shuffle_path(@moodboard), class: "shuffle-btn" do %>
-          <span>
-             Back to Shufflle
-            <i class="fa-sharp fa-solid fa-shuffle"></i>
-          </span>
-        <% end %>
+  <div class="back-button">
+    <%= link_to moodboard_shuffle_path(@moodboard), class: "shuffle-btn" do %>
+            <span>
+              Back to Shufflle
+              <i class="fa-sharp fa-solid fa-shuffle"></i>
+            </span>
+          <% end %>
+  </div>
 
   <% @moodboards.each do |moodboard| %>
 
 
 
-  <div class="container-wrapper">
+  <div class="container-wrapper cards">
       <div class="container moodboard">
         <h4 class="moodboard-name"><%= moodboard.name %></h4>
       </div>

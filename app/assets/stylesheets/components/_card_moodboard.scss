@@ -7,6 +7,10 @@
   padding-right: 80px;
 }
 
+.back-button {
+  margin-left: 64px;
+}
+
 .left-side {
   display: flex;
   flex-direction: column;
@@ -22,13 +26,13 @@
   display: grid;
   width: 800px;
   padding: 5px 20px 20px 20px;
-  margin: 20px;
+  margin: 100px;
 }
 
-// .page-container{
+.page-container{
 //   width: 800px;
-//   padding: 40px ;
-// }
+  padding-top: 220px;
+}
 
 .container-item-wrapper{
   display: inline-flex;

@@ -2,8 +2,9 @@
   display: flex;
   gap: 64px;
   width: 100%;
-  height: 100vh;
+  min-height: 140vh;
   padding-right: 80px;
+  overflow: hidden;
 }
 
 .left-side {
@@ -14,11 +15,7 @@
   background: #252329;
   color: white;
   padding: 48px;
-}
-
-
-#title-moodboard {
-  margin-top: 48px;
+  padding-top: 100px;
 }
 
 // .items {

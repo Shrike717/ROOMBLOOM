@@ -1,16 +1,23 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: rgb(255, 126, 126);
+  background: rgb(0, 0, 0);
+  margin: 48px;
+  padding: 16px 48px;
+  width: 90%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 8435;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-link {
+color: white !important;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 64px;
-}
 
-.navbar-nav > li > {
-color: white
+.navbar-left, .navbar-right {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
 }

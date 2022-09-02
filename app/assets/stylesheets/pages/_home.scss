@@ -1,10 +1,102 @@
 // Specific CSS for your home-page
+.hero {
+  min-height: 100vh;
+  padding: 10%;
+  align-items: center !important;
+  background: #D7CFBD;
+}
+
+.hero-content {
+  padding-top: 200px;
+}
+
+.hero-btn {
+padding: 24px;
+background: black;
+color: white;
+}
+
+
 .about-us {
   height: 600px;
-  background-color: rgb(94, 255, 94);
+  background: #D7CFBD;
+  display: flex;
+  padding: 10%;
+  gap: 32px;
 }
 
 .contact {
   height: 700px;
-  background-color: rgb(244, 244, 0);
+  background: #D7CFBD;
+  padding: 10%;
+}
+
+.strich {
+  font-weight: 900;
+  text-stroke: 2px black;
+}
+
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #252329;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  padding: 20x;
+}
+
+
+
+
+
+
+.footer {
+  background: #D7CFBD;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
 }

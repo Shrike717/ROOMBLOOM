@@ -69,29 +69,107 @@
   border: 1px solid red;
 }
 
-// MOODBOARD CARD NEW
+// **** MOODBOARD CARD NEW ****
 
-
+// CARD TOP
 
 .section-top {
-  border: solid red;
+  // border: solid red;
+  background-color: #252329;
   h4 {
     margin: 4px;
+    color: rgb(255, 255, 255);
   }
 }
 
+// CARD MIDDLE LEFT SIDE
+
 .section-middle-left {
-  border: solid rgb(30, 0, 255);
+  // border: solid rgb(30, 0, 255);
+  background-color: #252329;
+  li {
+    color: rgb(255, 255, 255);
+  }
 }
+
+// CARD MIDDLE RIGHT SIDE
 
 .section-middle-right {
-  border: solid rgb(0, 255, 51);
+  // border: solid rgb(0, 255, 51);
 }
 
-.section-bottom {
-  border: solid rgb(255, 0, 212);
+.right-side-card {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
+
+.item-wrapper-card {
+  width: 100%;
+  height: 700px;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
+
+.lamp-card{
+  background: yellow;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 1 /span 4;
+  grid-row: 1 /span 11;
+  z-index: 0;
+}
+
+.rug-card{
+  background: red;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 5 /span 10;
+  grid-row: 3 /span 16;
+  z-index: 0;
+}
+
+.sofa-card{
+  background: green;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 10 /span 18;
+  grid-row: 5 /span 8;
+  z-index: 1;
+}
+
+.chair-card{
+  background: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 2 /span 8;
+  grid-row: 13 /span 20;
+  z-index: 3;
+}
+
+.side-table-card{
+  background: brown;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 12 /span 6;
+  grid-row: 14 /span 6;
+  z-index: 2;
+}
+
+
+// CARD BOTTOM
+
+.section-bottom {
+  // border: solid rgb(255, 0, 212);
+  display: flex;
+  background-color: #252329;
+
+}
+
+
+
 
 .edit-btn {
   margin-right: 16px;

@@ -1,5 +1,5 @@
 class MoodboardsController < ApplicationController
-  before_action :set_moodboard, only: %i[ show edit update destroy ]
+  before_action :set_moodboard, only: %i[show edit update destroy]
 
   def index
     @moodboards = current_user.moodboards.order(updated_at: :desc) # gets all moodboards
@@ -69,6 +69,12 @@ class MoodboardsController < ApplicationController
     end
 
   end
+
+  def destroy
+    @moodboard.destroy
+    redirect_to moodboards_path, status: :see_other
+  end
+
 
   private
 

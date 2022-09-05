@@ -46,7 +46,7 @@
         <button class="edit-btn">Edit</button>
       </div>
       <div class="button-delete">
-        <button class="delete-btn">Delete</button>
+        <%= link_to "Delete", moodboard_path(moodboard), class: "delete-btn", data: { "turbo-method": :delete }%>
       </div>
     </div>
   </div>

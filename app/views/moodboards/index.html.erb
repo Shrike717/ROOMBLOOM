@@ -1,9 +1,61 @@
-
 <div class="page-container">
   <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
     <%= f.submit "start new moodboard", class: "hero-btn"%>
   <% end %>
 
+<%# *** NEW CARD *** %>
+
+<div class="container-card">
+  <% @moodboards.each do |moodboard| %>
+     <div class="row row-1 justify-content-center">
+    <div class="section-top col-12">
+    <h4 class="moodboard-name"><%= moodboard.name %></h4>
+    </div>
+  </div>
+  <div class="row row-2 justify-content-center">
+    <div class="section-middle-left col-3">
+      <% moodboard.items.sort.each do |item| %>
+        <ul>
+          <li><%= item.pretty_name %></li>
+        </ul>
+      <% end %>
+    </div>
+    <div class="section-middle-right col-8">
+      <div class="right-side-card">
+        <div class="item-wrapper-card">
+           <div class="lamp-card m-4" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Lights").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="rug-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Rugs").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="sofa-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Sofas").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="chair-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Chairs").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="side-table-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Coffee Tables").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="side-table-card">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-middle-outerright col-1"></div>
+  </div>
+  <div class="row row-3 justify-content-center">
+    <div class="section-bottom d-flex justify-content-end col-12">
+      <div class="button-edit">
+        <button class="edit-btn">Edit</button>
+      </div>
+      <div class="button-delete">
+        <button class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%# *** OLD CARD COMMENTED OUT *** %>
+
+<% if false %>
   <% @moodboards.each do |moodboard| %>
     <div class="container-wrapper cards">
       <div class="container moodboard">
@@ -24,102 +76,75 @@
   <% end %>
 
 </div>
+<% end %>
+
+
+
+
+<!--
+<% if false %>
+<% end %>
+-->
+
+<%# **** HARD CODED CARD **** %>
 
 <!--
 
--->
-
-
-<%
-=begin %>
- <div class="container wrapper">
-      <div class="container moodboard">
-        <h4 class="moodboard-name"><%= moodboard.name %></h4>
-      </div>
-      <div class="items">
-        <% @moodboard.items.sort.each do |item| %>
-          <% pin = item.moodboard_pin(@moodboard) %>
-          <div class="item">
-            <div class="item-image-wrapper">
-              <%= cl_image_tag item.photo.key, class: "item-image" %>
-            </div>
-            <div class="item-info">
-              <div><%= item.pretty_name %></div>
-            </div>
-
-        <% end %>
-      </div>
+<div class="container-card">
+  <div class="row row-1 justify-content-center">
+    <div class="section-top col-12">
+      <h4>Moodboard Name</h4>
     </div>
-</div>
-
-
-
-
-
-<!--
-<div class="container">
-  <div class="grid-container-element">
-      <div class="grid-child-element purple">Grid Column 1</div>
-      <div class="grid-child-element green">Grid Column 2</div>
   </div>
-</div>
+  <div class="row row-2 justify-content-center">
+    <div class="section-middle-left col-3">
+      <ul>
+        <li>Item Name 01</li>
+        <li>Item Name 02</li>
+        <li>Item Name 03</li>
+        <li>Item Name 04</li>
+        <li>Item Name 05</li>
+      </ul>
+    </div>
+    <div class="section-middle-right col-8">
+      <div class="right-side-card">
+        <div class="item-wrapper-card">
 
--->
-
-
-
-
-
-<!--
-  <div class="left-side">
-    <h1 id="title-moodboard">Create <br> Moodboard</h1>
-    <br>
-    <p>Click the add button to add a pin</p>
-
-    <div class="items">
-      <% @moodboard.items.sort.each do |item| %>
-        <% pin = item.moodboard_pin(@moodboard) %>
-        <div class="item">
-          <div class="item-image-wrapper">
-            <%= cl_image_tag item.photo.key, class: "item-image" %>
+          <div class="lamp-card m-4">
+            <%= "light" %>
           </div>
-          <div class="item-info">
-            <div><%= item.pretty_name %></div>
+
+          <div class="rug-card">
+            <%= "rug" %>
           </div>
-         <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
+
+          <div class="sofa-card">
+            <%= "sofa" %>
+          </div>
+
+          <div class="chair-card">
+            <%= "chair" %>
+          </div>
+
+          <div class="side-table-card">
+            <%= "side table" %>
+          </div>
+
         </div>
-      <% end %>
-    </div>
-  </div>
--->
-
-<!--
-Modal
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
- Save
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= simple_form_for @moodboard do |f| %>
-        <div class="modal-body">
-          <%= f.input :name, input_html: { value: "" } %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <%= f.submit "save moodboard", class: "btn btn-primary" %>
-        </div>
-      <% end %>
+    </div>
+    <div class="section-middle-outerright col-1"></div>
+  </div>
+  <div class="row row-3 justify-content-center">
+    <div class="section-bottom d-flex justify-content-end col-12">
+      <div class="button-edit">
+        <button class="edit-btn">Edit</button>
+      </div>
+      <div class="button-delete">
+        <button class="delete-btn">Delete</button>
+      </div>
     </div>
   </div>
 </div>
 
 -->
-<%
-=end %>

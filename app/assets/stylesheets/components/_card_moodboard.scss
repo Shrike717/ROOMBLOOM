@@ -61,10 +61,182 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   width: 100%;
 }
 .grid-child-element {
   margin: 10px;
   border: 1px solid red;
+}
+
+// **** MOODBOARD CARD NEW ****
+
+// CARD TOP
+
+.container-card {
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+.section-top {
+  // border: solid red;
+  background-color: #252329;
+  padding: 8px;
+  height: 68px;
+
+  h4 {
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    color: rgb(255, 255, 255);
+
+  }
+}
+
+// CARD MIDDLE LEFT SIDE
+
+.section-middle-left {
+  // border: solid rgb(30, 0, 255);
+  background-color: #252329;
+  li {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.row-2 .section-middle-left ul {
+  list-style: none;
+}
+
+.row-2 .section-middle-left ul li {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+// CARD MIDDLE RIGHT SIDE
+
+.section-middle-right {
+  // border: solid rgb(0, 255, 51);
+}
+
+.right-side-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+}
+.section-middle-outerright {
+  background-color: #252329;
+}
+
+
+.item-wrapper-card {
+  width: 500px;
+  height: 375px;
+  display: grid;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
+
+.lamp-card{
+  // background: yellow;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 1 /span 5;
+  grid-row: 1 /span 11;
+  z-index: 0;
+}
+
+.rug-card{
+  // background: red;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 5 /span 10;
+  grid-row: 3 /span 16;
+  z-index: 0;
+}
+
+.sofa-card{
+  // background: green;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 10 /span 18;
+  grid-row: 5 /span 8;
+  z-index: 1;
+}
+
+.chair-card{
+  // background: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 2 /span 8;
+  grid-row: 13 /span 20;
+  z-index: 3;
+}
+
+.side-table-card{
+  // background: brown;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 12 /span 6;
+  grid-row: 14 /span 6;
+  z-index: 2;
+}
+
+
+// CARD BOTTOM
+
+.section-bottom {
+  // border: solid rgb(255, 0, 212);
+  display: flex;
+  background-color: #252329;
+  height: 68px;
+  padding-top: 4px;
+
+}
+
+.row-3 {
+  margin-bottom: 24px;
+}
+
+.edit-btn {
+  margin: 8px;
+
+}
+
+.delete-btn {
+  margin: 8px;
+  margin-right: 66px;
+}
+
+.edit-btn{
+  // display: block;
+  background-color: #8f8f8f;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
+
+ &:hover {
+  background-color: #adacac;
+  }
+}
+
+.delete-btn{
+  // display: block;
+  background-color: #d81010;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
+  // border: 2px solid black;
+
+ &:hover {
+  background-color: #ef1010;
+  }
 }

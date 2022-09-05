@@ -1,13 +1,38 @@
 // Specific CSS for your home-page
+body {
+padding: 8%;
+background: #D7CFBD;
+row-gap: 200px;
+}
+
 .hero {
-  min-height: 100vh;
-  padding: 10%;
+  margin: 64px 0;
   align-items: center !important;
   background: #D7CFBD;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 600px;
+  width: 100%;
 }
 
 .hero-content {
-  padding-top: 200px;
+  padding-top: 80px;
+  padding-right: 40px;
+  z-index: 10;
+  grid-column: 1;
+  grid-row: 1 /span 3;
+}
+
+.hero-images {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  grid-column: 2 /span 3;
+  grid-row: 1 /span 3;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
 }
 
 .hero-btn {
@@ -17,18 +42,141 @@ color: white;
 }
 
 
+.hero-sofa {
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  width: 100%;
+  grid-column: 6 /span 10;
+  grid-row: 3 /span 4;
+  animation: sofa-load 1s ease-out;
+
+  @keyframes sofa-load {
+    0% {
+      transform: translateX(+400%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.hero-chair {
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  width: 100%;
+  grid-column: 1 /span 3;
+  grid-row: 6 /span 7;
+  animation: chair-load 1s ease-out;
+
+  @keyframes chair-load {
+    0% {
+        transform: translateX(-400%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.hero-rug {
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  width: 100%;
+  grid-column: 3 /span 5;
+  grid-row: 2 /span 5;
+  animation: rug-load 1s ease-out;
+
+  @keyframes rug-load {
+    0% {
+      transform: translateY(-400%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+.hero-coffee-table {
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  width: 100%;
+  grid-column: 7 /span 8;
+  grid-row: 7 /span 8;
+  animation: coffee-table-load 1s ease-out;
+
+  @keyframes coffee-table-load {
+    0% {
+      transform: translateY(+400%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+.hero-light {
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  width: 100%;
+  grid-column: 1 /span 2;
+  grid-row: 1 /span 2;
+  animation: light-load 1s ease-out;
+
+  @keyframes light-load {
+    0% {
+      transform: translateY(-400%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+
+
 .about-us {
-  height: 600px;
   background: #D7CFBD;
   display: flex;
-  padding: 10%;
+  padding: 32px 0;
   gap: 32px;
+  width: 100%;
+}
+
+#title-about-us {
+  min-width: fit-content;
+}
+
+#stroke-home {
+  background: black;
+  opacity: none !important;
+  height: 2px;
+  width: 10%;
+}
+
+#about-us-description {
+  width: fit-content;
 }
 
 .contact {
   height: 700px;
   background: #D7CFBD;
-  padding: 10%;
+  padding: 32px 0;
 }
 
 .strich {
@@ -75,6 +223,7 @@ input[type=submit]:hover {
 
 
 .footer {
+  padding: 32px 96px;
   background: #D7CFBD;
   display: flex;
   align-items: center;

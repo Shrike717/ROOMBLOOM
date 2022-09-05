@@ -1,8 +1,6 @@
-<div class="whole-page" data-controller="" data-ajax-moodboard-value="<%=@moodboard.id %>">
 
+<div class="whole-page">
 
-
-<script>history.scrollRestoration = "manual"</script>
   <div class="left-side">
     <ul class="breadcrumb">
       <li><%= link_to "Home", root_path, class:"breadcrumb-link" %></li>
@@ -56,6 +54,7 @@
     </div>
 
       <div class="buttons">
+
         <%= link_to moodboard_shuffle_path(@moodboard), class: "shuffle-btn" do %>
           <span>
               Shuffle

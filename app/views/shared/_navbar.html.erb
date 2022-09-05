@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar <%= "d-none" if params[:controller] == "moodboards" && params[:action] == "show" %>">
   <div class = "navbar-left">
     <%= link_to "/", class: "navbar-logo" do %>
       <%= image_tag "roombloom-logo.png" %>

@@ -2,7 +2,7 @@
   display: flex;
   gap: 64px;
   width: 100%;
-  min-height: 140vh;
+  min-height: 100vh;
   padding-right: 80px;
   overflow: hidden;
 }
@@ -15,7 +15,6 @@
   background: #252329;
   color: white;
   padding: 48px;
-  padding-top: 100px;
 }
 
 // .items {
@@ -187,4 +186,31 @@ background: rgb(28, 28, 28);
 
 .item-info > div {
   flex-grow: 1;
+}
+
+.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #252329;
+  font-size: 14px;
+ font-weight: 100;
+ font-family: Roboto;
+
+ .breadcrumb li {
+   display: inline;
+  }
+  .breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  .breadcrumb-link{
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .breadcrumb-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
 }

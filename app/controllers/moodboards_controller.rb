@@ -4,7 +4,6 @@ class MoodboardsController < ApplicationController
   def index
     @moodboards = current_user.moodboards.order(updated_at: :desc) # gets all moodboards
     @moodboard = Moodboard.new
-    # @pin = @moodboards.last.pins.first # This was made for testing purposes. Find pin with id 1 and test the toggle false / true in the pin update method
   end
 
   def show

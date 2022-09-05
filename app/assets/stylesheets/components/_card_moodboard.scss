@@ -68,3 +68,63 @@
   margin: 10px;
   border: 1px solid red;
 }
+
+// MOODBOARD CARD NEW
+
+
+
+.section-top {
+  border: solid red;
+  h4 {
+    margin: 4px;
+  }
+}
+
+.section-middle-left {
+  border: solid rgb(30, 0, 255);
+}
+
+.section-middle-right {
+  border: solid rgb(0, 255, 51);
+}
+
+.section-bottom {
+  border: solid rgb(255, 0, 212);
+  display: flex;
+}
+
+.edit-btn {
+  margin-right: 16px;
+}
+
+
+
+.edit-btn{
+  // display: block;
+  background-color: #8f8f8f;
+  color: rgb(255, 255, 255);
+  padding: 12px;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
+  // border: 2px solid black;
+
+ &:hover {
+  background-color: #adacac;
+  }
+}
+
+.delete-btn{
+  // display: block;
+  background-color: #d81010;
+  color: rgb(255, 255, 255);
+  padding: 12px;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
+  // border: 2px solid black;
+
+ &:hover {
+  background-color: #ef1010;
+  }
+}

@@ -1,9 +1,59 @@
-
 <div class="page-container">
   <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
     <%= f.submit "start new moodboard", class: "hero-btn"%>
   <% end %>
 
+<%# *** OLD CARD COMMENTED OUT *** %>
+<div class="container-card">
+  <% @moodboards.each do |moodboard| %>
+     <div class="row row-1 justify-content-center">
+    <div class="section-top col-12">
+    <h4 class="moodboard-name"><%= moodboard.name %></h4>
+    </div>
+  </div>
+  <div class="row row-2 justify-content-center">
+    <div class="section-middle-left col-3">
+      <% moodboard.items.sort.each do |item| %>
+        <ul>
+          <li><%= item.pretty_name %></li>
+        </ul>
+      <% end %>
+    </div>
+    <div class="section-middle-right col-8">
+      <div class="right-side-card">
+        <div class="item-wrapper-card">
+           <div class="lamp-card m-4" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Lights").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="rug-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Rugs").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="sofa-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Sofas").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="chair-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Chairs").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="side-table-card" style="background-image: url('<%= cl_image_path moodboard.items.find_by(category: "Coffee Tables").photo.key, height: 500, crop: :fill %>')"></div>
+
+            <div class="side-table-card">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-middle-outerright col-1"></div>
+  </div>
+  <div class="row row-3 justify-content-center">
+    <div class="section-bottom d-flex justify-content-end col-12">
+      <div class="button-edit">
+        <button class="edit-btn">Edit</button>
+      </div>
+      <div class="button-delete">
+        <button class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<% if false %>
   <% @moodboards.each do |moodboard| %>
     <div class="container-wrapper cards">
       <div class="container moodboard">
@@ -24,10 +74,19 @@
   <% end %>
 
 </div>
+<% end %>
+
+
+
 
 <!--
-
+<% if false %>
+<% end %>
 -->
+
+<%# **** HARD CODED CARD **** %>
+
+<!--
 
 <div class="container-card">
   <div class="row row-1 justify-content-center">
@@ -85,3 +144,5 @@
     </div>
   </div>
 </div>
+
+-->

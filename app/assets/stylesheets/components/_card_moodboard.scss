@@ -61,7 +61,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   width: 100%;
 }
 .grid-child-element {
@@ -142,7 +142,7 @@
 }
 
 .lamp-card{
-  background: yellow;
+  // background: yellow;
   background-size: contain;
   background-repeat: no-repeat;
   grid-column: 1 /span 5;
@@ -151,7 +151,7 @@
 }
 
 .rug-card{
-  background: red;
+  // background: red;
   background-size: contain;
   background-repeat: no-repeat;
   grid-column: 5 /span 10;
@@ -160,7 +160,7 @@
 }
 
 .sofa-card{
-  background: green;
+  // background: green;
   background-size: contain;
   background-repeat: no-repeat;
   grid-column: 10 /span 18;
@@ -169,7 +169,7 @@
 }
 
 .chair-card{
-  background: black;
+  // background: black;
   background-size: contain;
   background-repeat: no-repeat;
   grid-column: 2 /span 8;
@@ -178,7 +178,7 @@
 }
 
 .side-table-card{
-  background: brown;
+  // background: brown;
   background-size: contain;
   background-repeat: no-repeat;
   grid-column: 12 /span 6;
@@ -198,8 +198,9 @@
 
 }
 
-
-
+.row-3 {
+  margin-bottom: 24px;
+}
 
 .edit-btn {
   margin: 8px;
@@ -219,7 +220,6 @@
   text-decoration: none;
   text-align: center;
   width: 100px;
-  // border: 2px solid black;
 
  &:hover {
   background-color: #adacac;

@@ -4,9 +4,7 @@ import "./controllers"
 import "bootstrap"
 
 // document.querySelector(".whole-page").addEventListener("click", (e) => {
-//   e.preventDefault();
-//   document.querySelector(".shuffle-btn").reload
-//   console.log("Am I working", window.location)
+//   console.log("Am I working")
 // })
 
 
@@ -15,3 +13,14 @@ import "bootstrap"
 //   let y = Number(sessionStorage.getItem("scrollPosition_" + path));
 //   window.scrollTo(0, y);
 // }
+
+// document.querySelector('.color-picker').addEventListener('input', function(){
+//   console.log("Am i workinng?")
+//   const page = document.querySelector(".whole-page")
+//   page.style.backgroundColor = this.value;
+//   const b = document.querySelector('.cnew')
+//   const c = document.createElement("input")
+//   c.type = "text"
+//   c.value = this.value
+//   b.appendChild(c)
+// })

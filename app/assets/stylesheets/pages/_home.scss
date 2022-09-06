@@ -1,12 +1,14 @@
 // Specific CSS for your home-page
-body {
-padding: 8%;
+.full-page {
+padding-top: 8%;
+padding-left: 8%;
+padding-right: 8%;
 background: #D7CFBD;
-row-gap: 200px;
+
 }
 
 .hero {
-  margin: 64px 0;
+  margin: 88px 0;
   align-items: center !important;
   background: #D7CFBD;
   display: grid;
@@ -39,6 +41,7 @@ row-gap: 200px;
 padding: 24px;
 background: black;
 color: white;
+min-width: 300px;
 }
 
 
@@ -153,12 +156,15 @@ color: white;
 .about-us {
   background: #D7CFBD;
   display: flex;
-  padding: 32px 0;
+  padding: 80px 0;
   gap: 32px;
   width: 100%;
 }
 
 #title-about-us {
+  font-size: 48px;
+  font-weight: 200;
+
   min-width: fit-content;
 }
 
@@ -174,9 +180,18 @@ color: white;
 }
 
 .contact {
-  height: 700px;
+  margin: 0 auto;
+  max-width: 700px;
+  height: auto;
   background: #D7CFBD;
   padding: 32px 0;
+}
+#contact-title {
+  font-size: 48px;
+  font-weight: 200;
+  min-width: fit-content;
+  text-align: center;
+  padding-bottom: 48px;
 }
 
 .strich {
@@ -224,6 +239,7 @@ input[type=submit]:hover {
 
 .footer {
   padding: 32px 96px;
+  margin-top: 96px;
   background: #D7CFBD;
   display: flex;
   align-items: center;

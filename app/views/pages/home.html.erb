@@ -1,65 +1,69 @@
-<div class="hero">
-  <div class="hero-content">
-    <h1 id="hero-title">Create moodboard</h1>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-    <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
-      <%= f.submit "start shufflin a new moodboard", class: "hero-btn"%>
-    <% end %>
+<div class="full-page">
+  <div class="hero">
+    <div class="hero-content">
+      <h1 id="hero-title">Create moodboard</h1>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+      <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
+        <%= f.submit "Start Creating", class: "hero-btn"%>
+      <% end %>
+    </div>
+    <div class="hero-images">
+      <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855932/01_sofas/01_Sofas_09_Ericson_LS_1000px_dgsvz9.png', class: "hero-image hero-sofa" %>
+      <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855969/02_chairs/02_Chairs_06_Silva_LS_1000px_x9op9j.png', class: "hero-image hero-chair" %>
+      <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855999/03_rugs/03_Rugs_04_Kayser_LS_1000px_u7ncu3.png', class: "hero-image hero-rug" %>
+      <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_06_Gibson_LS_1000px_iqcgun.png', class: "hero-image hero-coffee-table" %>
+      <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661856046/05_lights/05_Lights_11_Orikata_LS_1000px_rutmk0.png', class: "hero-image hero-light" %>
+    </div>
   </div>
-  <div class="hero-images">
-    <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855932/01_sofas/01_Sofas_09_Ericson_LS_1000px_dgsvz9.png', class: "hero-image hero-sofa" %>
-    <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855969/02_chairs/02_Chairs_06_Silva_LS_1000px_x9op9j.png', class: "hero-image hero-chair" %>
-    <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855999/03_rugs/03_Rugs_04_Kayser_LS_1000px_u7ncu3.png', class: "hero-image hero-rug" %>
-    <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_06_Gibson_LS_1000px_iqcgun.png', class: "hero-image hero-coffee-table" %>
-    <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661856046/05_lights/05_Lights_11_Orikata_LS_1000px_rutmk0.png', class: "hero-image hero-light" %>
+
+
+  <div id="about-us" class="about-us">
+    <h2 id="title-about-us">About us</h2>
+    <hr id="stroke-home">
+    <p id="about-us-description">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+
+
+      . Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
   </div>
-</div>
 
+  <div id="contact" class="contact">
+    <h2 id="contact-title">Contact us</h2>
+    <form action="action_page.php">
 
-<div id="about-us" class="about-us">
-  <h2 id="title-about-us">About us</h2>
-  <hr id="stroke-home">
-  <p id="about-us-description">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-    . Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  </p>
-</div>
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
 
-<div id="contact" class="contact">
-  <form action="action_page.php">
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <input type="submit" value="Submit">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-
-  </form>
-</div>
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    </form>
   </div>
-  <div class="footer-copyright">
-    DO THE SHUFFLE! <i class="fas fa-heart"></i>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      DO THE SHUFFLE! <i class="fas fa-heart"></i>
+    </div>
   </div>
+
 </div>

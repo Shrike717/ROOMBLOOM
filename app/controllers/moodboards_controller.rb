@@ -38,6 +38,7 @@ class MoodboardsController < ApplicationController
 
   def create
     @moodboard = Moodboard.new # Needs a new moodboard instance
+    # @moodboard.name = "Fake"
     @moodboard.user = current_user # A moodboard neeeds a user id to be created. This connects moodboard to current logged in user.
     if @moodboard.save
       @moodboard.generate_pins

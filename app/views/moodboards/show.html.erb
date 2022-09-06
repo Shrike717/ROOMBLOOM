@@ -65,8 +65,8 @@
         <% end %>
 
 
-           <button type="button" class="save-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Save
+        <button type="button" class="save-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Save <i class="fa-regular fa-heart"></i>
         </button>
 
         <!-- Modal -->
@@ -74,11 +74,12 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
+                <h3>Please fill out</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <%= simple_form_for @moodboard do |f| %>
                 <div class="modal-body">
-                  <%= f.input :Name_your_Moodboard, input_html: { value: "" }, require: true, placeholder: "Type in here" %>
+                  <%= f.input :name, input_html: { value: "" }, require: true, placeholder: "Type in here" %>
                 </div>
                 <div class="modal-footer">
                   <%= f.submit "Save", class: "btn-save-moodboard" %>

@@ -45,7 +45,8 @@
   <div class="row row-3 justify-content-center">
     <div class="section-bottom d-flex justify-content-end col-12">
       <div class="button-edit">
-        <button class="edit-btn">Edit</button>
+        <%# <button class="edit-btn">Edit</button> %>
+        <%= link_to "Edit", moodboard_path(moodboard), class: "edit-btn"%>
       </div>
       <div class="button-delete">
         <%= link_to "Delete", moodboard_path(moodboard), class: "delete-btn", data: { "turbo-method": :delete }%>

@@ -2,7 +2,7 @@ class MoodboardsController < ApplicationController
   before_action :set_moodboard, only: %i[show edit update destroy]
 
   def index
-    @moodboards = current_user.moodboards.order(updated_at: :desc) # gets all moodboards
+    @moodboards = current_user.moodboards.where.not(name: "").order(updated_at: :desc) # gets all moodboards
     @moodboard = Moodboard.new
   end
 
@@ -38,7 +38,6 @@ class MoodboardsController < ApplicationController
 
   def create
     @moodboard = Moodboard.new # Needs a new moodboard instance
-    @moodboard.name = Moodboard.generate_name # As a name is needed for mb creation we give it a random name. Method is in Model Moodboard file. User should name it later
     @moodboard.user = current_user # A moodboard neeeds a user id to be created. This connects moodboard to current logged in user.
     if @moodboard.save
       @moodboard.generate_pins

@@ -3,7 +3,7 @@ class Moodboard < ApplicationRecord
   has_many :pins, dependent: :destroy
   has_many :items, through: :pins
 
-  validates :name, presence: true
+  # validates :name, presence: true
 
 
   def self.generate_name

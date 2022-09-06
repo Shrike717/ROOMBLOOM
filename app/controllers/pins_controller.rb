@@ -1,8 +1,10 @@
 class PinsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def update
     @pin = Pin.find(params[:id])
     @pin.pinned = !@pin.pinned # Toggles between truee and false
+    # @pin.save
     if @pin.save
       respond_to do |format|
         format.html{

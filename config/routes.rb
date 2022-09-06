@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     get "shuffle", to: "moodboards#shuffle", as: "shuffle" # A route was made to hit the custom shuffle method on moodboards controller.
   end
 
-  resources :pins, only: [ :destroy, :update ]
+  resources :pins, only: :destroy
 end

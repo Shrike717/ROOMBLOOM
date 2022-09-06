@@ -15,12 +15,15 @@ export default class extends Controller {
     let button = el.querySelector("a")
     button.classList.toggle("pin-btn")
     button.classList.toggle("unpin-btn")
+    // let btnNewText = button.innerText === 'pin' ? 'unpin' : 'pin'
+    // button.innerText =  btnNewText
+    // console.log(btnNewText)
 
     fetch(button.href, {
-      method: "POST",
-      headers: { "Accept": "text/html" }
+      method: "PATCH",
+      headers: { "Accept": "application/json" }
     })
-      .then(response => response.json())
+      .then(response => response.text())
       .then((data) => {
         console.log(data)
       })

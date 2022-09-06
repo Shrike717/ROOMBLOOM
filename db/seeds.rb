@@ -47,7 +47,7 @@ item.photo.attach(io: file, filename: "01_Sofas_07_Gio_LS_1000px_jhtytv.png", co
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855931/01_sofas/01_Sofas_04_Sterling_LS_1000px_rij8hm.png")
-item = Item.new(name: "01 Sterling Sof", category: "Sofas")
+item = Item.new(name: "01 Sterling Sofa", category: "Sofas")
 item.photo.attach(io: file, filename: "01_Sofas_04_Sterling_LS_1000px_rij8hm.png", content_type: "image/png")
 item.save
 

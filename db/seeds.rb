@@ -190,52 +190,52 @@ puts "Creating Coffee Tables..."
 # COFFEE TABLES
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_05_Cow_Hide_LS_1000px_gyo62y.png")
-item = Item.new(name: "02 Lind Cowhide Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Lind Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_05_Cow_Hide_LS_1000px_gyo62y.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_03_Liam_LS_1000px_nntpo5.png")
-item = Item.new(name: "02 Liam Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Liam Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_03_Liam_LS_1000px_nntpo5.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_06_Gibson_LS_1000px_iqcgun.png")
-item = Item.new(name: "02 Gibson Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Gibson Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_06_Gibson_LS_1000px_iqcgun.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_07_Williams_LS_1000px_uwz2vo.png")
-item = Item.new(name: "02 Williams Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Williams Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_07_Williams_LS_1000px_uwz2vo.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_10-Kavala_LS_1000px_lvbtv4.png")
-item = Item.new(name: "02 Kavala Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Kavala Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_10-Kavala_LS_1000px_lvbtv4.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_04_Sanders_LS_1000px_ugovjp.png")
-item = Item.new(name: "02 Sanders Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Sanders Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_04_Sanders_LS_1000px_ugovjp.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856023/04_coffee_tables/04_Coffee-Tables_09_Corbett_LS_1000px_aojggy.png")
-item = Item.new(name: "02 Corbett Coffee Table ", category: "Coffee Tables")
+item = Item.new(name: "02 Corbett Table ", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_09_Corbett_LS_1000px_aojggy.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856022/04_coffee_tables/04_Coffee-Tables_01_Graham_LS_1000px_yreukb.png")
-item = Item.new(name: "02 Graham Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Graham Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_01_Graham_LS_1000px_yreukb.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856022/04_coffee_tables/04_Coffee-Tables_02_Tyne_LS_1000px_c9f3re.png")
-item = Item.new(name: "02 Tyne Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Tyne Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_02_Tyne_LS_1000px_c9f3re.png", content_type: "image/png")
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661856022/04_coffee_tables/04_Coffee-Tables_08_Decker_LS_1000px_c8dt4k.png")
-item = Item.new(name: "02 Decker Coffee Table", category: "Coffee Tables")
+item = Item.new(name: "02 Decker Table", category: "Coffee Tables")
 item.photo.attach(io: file, filename: "04_Coffee-Tables_08_Decker_LS_1000px_c8dt4k.png", content_type: "image/png")
 item.save
 

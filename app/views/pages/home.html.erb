@@ -3,9 +3,15 @@
     <div class="hero-content">
       <h1 id="hero-title">Create moodboard</h1>
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-      <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
-        <%= f.submit "Start Creating", class: "hero-btn"%>
+
+      <% if user_signed_in? %>
+        <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
+          <%= f.submit "Start Creating", class: "hero-btn"%>
+        <% end %>
+      <% else %>
+        <%= link_to "Start Creating", new_user_session_path, class: "btn hero-btn-redirect" %>
       <% end %>
+
     </div>
     <div class="hero-images">
       <%= image_tag 'https://res.cloudinary.com/dbxebmzku/image/upload/v1661855932/01_sofas/01_Sofas_09_Ericson_LS_1000px_dgsvz9.png', class: "hero-image hero-sofa" %>

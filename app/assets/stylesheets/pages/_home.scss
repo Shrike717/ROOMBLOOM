@@ -42,7 +42,23 @@ padding: 24px;
 background: black;
 color: white;
 min-width: 300px;
+border-radius: 0 !important;
+
 }
+
+
+.hero-btn-redirect {
+padding:12px;
+background: black;
+color: white;
+min-width: 300px;
+&:hover {
+background: #252329 !important;
+color: white;
+padding:12px;
+  }
+}
+
 
 
 .hero-sofa {

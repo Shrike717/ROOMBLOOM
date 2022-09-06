@@ -1,7 +1,9 @@
 <div class="page-container">
-  <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
-    <%= f.submit "start new moodboard", class: "hero-btn"%>
-  <% end %>
+  <div class="button-new-mb">
+    <%= simple_form_for @moodboard do |f| %> <!-- An empty instance is coming from the home method in pages controller. It has no id. Therefore rails knows it has to hit the create method on moodboards controller-->
+      <%= f.submit "start new moodboard", class: "dashboard-btn"%>
+    <% end %>
+  </div>
 
 <%# *** NEW CARD *** %>
 

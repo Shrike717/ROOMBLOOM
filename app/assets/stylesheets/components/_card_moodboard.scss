@@ -31,7 +31,19 @@
 
 .page-container{
 //   width: 800px;
-  padding-top: 220px;
+  padding-top: 100px;
+}
+
+.button-new-mb {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-btn {
+padding: 14px 52px !important;
+background: rgb(0, 0, 0) !important;
+color: white !important;
 }
 
 .container-item-wrapper{
@@ -74,7 +86,7 @@
 // CARD TOP
 
 .container-card {
-  width: 60%;
+  width: 920px;
   margin: 0 auto;
 }
 
@@ -208,8 +220,8 @@
 }
 
 .button-delete{
-  margin: 8px;
-  margin-right: 66px;
+  margin: 18px;
+  margin-right: 68px;
 }
 
 .edit-btn{

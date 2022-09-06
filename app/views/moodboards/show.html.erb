@@ -1,9 +1,11 @@
 
-<div class="whole-page">
+<div class="whole-page" data-ajax-moodboard-value="<%=@moodboard.id %>">
 
   <div class="left-side">
     <ul class="breadcrumb">
       <li><%= link_to "Home", root_path, class:"breadcrumb-link" %></li>
+      <li><%= link_to "Dashboard", moodboards_path, class:"breadcrumb-link" %></li>
+
     </ul>
     <h1 id="title-moodboard">Create <br> Moodboard</h1>
     <br>
@@ -20,7 +22,7 @@
             <div><%= item.pretty_name %></div>
           </div>
           <div data-action="click->ajax#send" data-id="<%=item.id%>">
-            <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin, anchor: "data-id#{item.id}"), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
+            <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
           </div>
         </div>
       <% end %>

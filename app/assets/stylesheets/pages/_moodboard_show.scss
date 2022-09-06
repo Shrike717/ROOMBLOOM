@@ -10,44 +10,32 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:flex-start;
   width: 500px;
   background: #252329;
   color: white;
-  padding: 48px;
+  padding: 0 48px;
+  padding-top: 32px;
 }
 
-// .items {
-// display: grid;
-// }
-
-.pin-btn {
-  padding: 8px;
-  background-color: white;
-  color:#252329;
-  border-radius: 5px;
-  text-decoration: none;
-  width: max-content;
-  height: 40px;
-}
 
 .item-image {
   max-width: 100%;
   max-height: 70px;
 }
 
+.items {
+
+}
+
 .item {
   display: flex;
   margin: 15px 0;
-  gap: 15px;
+  gap: 8px;
   height: 70px;
   align-items: center;
   max-width: 100%;
   justify-content: space-between;
-//  display: grid;
-//  grid-template-columns: 1fr 2fr 1fr;
-//  align-items: center;
-//  justify-content: space-between;
 }
 
 .item-info {
@@ -137,23 +125,25 @@
   border: 2px solid black;
 
  &:hover {
-background: rgb(228, 228, 228);
+  color: #252329;
+  border-color: #252329;
   }
 }
 
 
 .save-btn{
-  background: rgb(0, 0, 0);
+  background: black;
   display: block;
-  color: rgb(255, 255, 255);
+  color: white;
   padding: 16px;
   text-decoration: none;
   text-align: center;
   width: 200px;
+  border: none !important;
 
  &:hover {
-color: rgb(255, 255, 255);
-background: rgb(28, 28, 28);
+color: white;
+background: #252329;
   }
 }
 
@@ -163,7 +153,7 @@ background: rgb(28, 28, 28);
   gap: 32px;
 }
 
-.pin-btn{
+.pin-btn {
   background: rgb(255, 255, 255);
   display: block;
   color: #252329;
@@ -171,9 +161,15 @@ background: rgb(28, 28, 28);
   text-decoration: none;
   text-align: center;
   flex-basis: 48px;
+  width: 64px;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background: #D7CFBD;
+  }
 }
 
-.unpin-btn{
+.unpin-btn {
   display: block;
   color: rgb(255, 255, 255);
   border: 1px solid white;
@@ -181,6 +177,12 @@ background: rgb(28, 28, 28);
   text-decoration: none;
   text-align: center;
   flex-basis: 48px;
+  min-width: 64px;
+  &:hover {
+    text-decoration: none;
+    color: #D7CFBD;
+    border-color: #D7CFBD;
+  }
 }
 
 
@@ -207,10 +209,35 @@ background: rgb(28, 28, 28);
   .breadcrumb-link{
     color: #ffffff;
     text-decoration: none;
+    padding-right: 4px;
+  }
+  .breadcrumb-arrow{
+    padding-right: 4px;
   }
   .breadcrumb-link:hover {
     color: #ffffff;
     text-decoration: underline;
   }
 
+}
+
+
+.left-side-content {
+height: 100%;
+display:table-cell;
+vertical-align:middle;
+}
+
+#title-moodboard {
+  padding-top: 48px;
+}
+
+
+
+.btn-save-moodboard {
+  border-radius: 0 !important;
+  padding: 4px;
+  width: 160px;
+  background: black;
+  color: white;
 }

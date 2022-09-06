@@ -4,13 +4,12 @@
   <div class="left-side">
     <ul class="breadcrumb">
       <li><%= link_to "Home", root_path, class:"breadcrumb-link" %></li>
+      <li class="breadcrumb-arrow">></li>
       <li><%= link_to "Dashboard", moodboards_path, class:"breadcrumb-link" %></li>
-
     </ul>
     <h1 id="title-moodboard">Create <br> Moodboard</h1>
     <br>
     <p>Click pin to keep an item from shuffling</p>
-
     <div class="items">
       <% @moodboard.items.sort.each do |item| %>
         <% pin = item.moodboard_pin(@moodboard) %>
@@ -27,6 +26,7 @@
         </div>
       <% end %>
     </div>
+
   </div>
 
   <div class="right-side">
@@ -74,16 +74,14 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <%= simple_form_for @moodboard do |f| %>
                 <div class="modal-body">
-                  <%= f.input :name, input_html: { value: "" } %>
+                  <%= f.input :Name_your_Moodboard, input_html: { value: "" }, require: true, placeholder: "Type in here" %>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <%= f.submit "save moodboard", class: "btn btn-primary" %>
+                  <%= f.submit "Save", class: "btn-save-moodboard" %>
                 </div>
               <% end %>
             </div>

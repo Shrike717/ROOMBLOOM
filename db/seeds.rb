@@ -92,7 +92,7 @@ item.photo.attach(io: file, filename: "02_Chairs_07_Jasper_LS_1000px_a4ulma.png"
 item.save
 
 file = URI.open("https://res.cloudinary.com/dbxebmzku/image/upload/v1661855965/02_chairs/02_Chairs_03_Boden_LS_1000px_bhfnrv.png")
-item = Item.new(name: "02 Boden Chair", category: "Chairs", url: ":https://www.roomandboard.com/catalog/living/chairs/boden-chair-and-ottoman/")
+item = Item.new(name: "02 Boden Chair", category: "Chairs", url: "https://www.roomandboard.com/catalog/living/chairs/boden-chair-and-ottoman/")
 item.photo.attach(io: file, filename: "02_Chairs_03_Boden_LS_1000px_bhfnrv.png", content_type: "image/png")
 item.save
 

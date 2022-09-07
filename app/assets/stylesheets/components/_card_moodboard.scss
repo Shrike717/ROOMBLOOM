@@ -36,6 +36,7 @@
 .button-new-mb {
   display: flex;
   justify-content: center;
+  border-radius: 0px !important;
   margin-bottom: 40px;
   margin-top: 100px;
 }
@@ -44,6 +45,7 @@
 padding: 14px 52px !important;
 background: rgb(0, 0, 0) !important;
 color: white !important;
+border-radius: 0px !important;
 }
 
 .container-item-wrapper{
@@ -234,7 +236,8 @@ color: white !important;
   width: 100px;
 
  &:hover {
-  background-color: #adacac;
+  background-color: #a3a3a3;
+  color: white
   }
 }
 
@@ -245,10 +248,49 @@ color: white !important;
   padding: 8px;
   text-decoration: none;
   text-align: center;
-  width: 100px;
+  width: 100px !important;
   // border: 2px solid black;
 
  &:hover {
   background-color: #ef1010;
+  color: white;
   }
+}
+
+
+.product-link {
+display: flex;
+justify-content: space-between;
+text-decoration: none;
+color: white;
+padding-bottom: 4px;
+border-bottom: 2px solid white;
+width: 100% !important;
+
+&:hover {
+  text-decoration: none;
+  color:white;
+}
+}
+
+
+.ul-products {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+.link-tag {
+color: white;
+width: 100%;
+text-decoration: none;
+
+&:hover {
+  text-decoration: none;
+  color:white;
+}
+}
+
+.moodboard-name {
+  padding-bottom: 24px;
 }

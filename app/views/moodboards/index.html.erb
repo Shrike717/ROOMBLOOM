@@ -17,7 +17,7 @@
     <div class="section-middle-left col-3">
       <% moodboard.items.sort.each do |item| %>
         <ul>
-          <li><%= item.pretty_name %></li>
+          <li><%= link_to item.pretty_name, item.url, :target => "_blank" %></li>
         </ul>
       <% end %>
     </div>

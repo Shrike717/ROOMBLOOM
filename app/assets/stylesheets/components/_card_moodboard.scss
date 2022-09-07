@@ -263,11 +263,12 @@ display: flex;
 justify-content: space-between;
 text-decoration: none;
 color: white;
+border-bottom: 2px solid #252329;
 padding-bottom: 4px;
-border-bottom: 2px solid white;
 width: 100% !important;
 
 &:hover {
+  border-bottom: 2px solid white;
   text-decoration: none;
   color:white;
 }

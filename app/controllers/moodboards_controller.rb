@@ -1,4 +1,5 @@
 class MoodboardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :set_moodboard, only: %i[show edit update destroy]
 
   def index
@@ -59,6 +60,7 @@ class MoodboardsController < ApplicationController
   end
 
   def update
+
     @moodboards = Moodboard.all # gets all moodboards
     @moodboard.update(moodboard_params)
     @moodboard.pins.update_all(pinned: true)

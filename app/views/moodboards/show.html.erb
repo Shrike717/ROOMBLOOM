@@ -20,9 +20,11 @@
           <div class="item-info">
             <div><%= item.pretty_name %></div>
           </div>
-          <div data-action="click->ajax#send" data-id="<%=item.id%>">
-            <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
-          </div>
+          <% if current_user == @moodboard.user %>
+            <div data-id="<%=item.id%>">
+              <%= link_to pin.pinned? ? "Unpin" : "Pin", moodboard_pin_path(@moodboard, pin), data: { turbo_method: :put }, class: pin.pinned? ? "unpin-btn" : "pin-btn" %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -54,8 +56,8 @@
       </div>
 
     </div>
-
-      <div class="buttons">
+      <% if current_user == @moodboard.user %>
+        <div class="buttons">
 
         <%= link_to moodboard_shuffle_path(@moodboard), class: "shuffle-btn" do %>
           <span>
@@ -100,7 +102,7 @@
 
 
 
-      </div>
-
+        </div>
+      <% end %>
   </div>
 </div>

@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "RoomBloom"
+meta_title: "RoomBloom - Shuffle Your Space"
+meta_description: "Generate a moodboard with one click."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+#twitter_account: "@product_twitter_account"  required for Twitter Cards

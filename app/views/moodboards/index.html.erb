@@ -8,7 +8,7 @@
 
 <div class="container-card">
   <% @moodboards.each do |moodboard| %>
-     <div class="row row-1 justify-content-center">
+    <div class="row row-1 justify-content-center">
     <div class="section-top col-12">
     <h4 class="moodboard-name"><%= moodboard.name %></h4>
     </div>
@@ -16,8 +16,8 @@
   <div class="row row-2 justify-content-center">
     <div class="section-middle-left col-3">
       <% moodboard.items.sort.each do |item| %>
-        <ul>
-          <li><%= link_to item.pretty_name, item.url, :target => "_blank" %></li>
+        <ul class="ul-products">
+          <li class="product-link"><%= link_to item.pretty_name, item.url, class:"link-tag", :target => "_blank"%><i class="fa-sharp fa-solid fa-arrow-right"></i></li>
         </ul>
       <% end %>
     </div>

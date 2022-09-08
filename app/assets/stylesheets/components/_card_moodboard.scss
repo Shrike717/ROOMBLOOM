@@ -216,48 +216,6 @@ border-radius: 0px !important;
   margin-bottom: 24px;
 }
 
-.button-edit{
-  margin-top: 18px;
-
-}
-
-.button-delete{
-  margin: 18px;
-  margin-right: 68px;
-}
-
-.edit-btn{
-  // display: block;
-  background-color: #8f8f8f;
-  color: rgb(255, 255, 255);
-  padding: 8px 20px;
-  text-decoration: none;
-  text-align: center;
-  width: 100px;
-
- &:hover {
-  background-color: #a3a3a3;
-  color: white
-  }
-}
-
-.delete-btn{
-  // display: block;
-  background-color: #d81010;
-  color: rgb(255, 255, 255);
-  padding: 8px;
-  text-decoration: none;
-  text-align: center;
-  width: 100px !important;
-  // border: 2px solid black;
-
- &:hover {
-  background-color: #ef1010;
-  color: white;
-  }
-}
-
-
 .product-link {
 display: flex;
 justify-content: space-between;
@@ -265,12 +223,14 @@ text-decoration: none;
 color: white;
 border-bottom: 2px solid #252329;
 padding-bottom: 4px;
+border-bottom: 2px solid #252329;
 width: 100% !important;
 
 &:hover {
   border-bottom: 2px solid white;
   text-decoration: none;
   color:white;
+  border-bottom: 2px solid white;
 }
 }
 
@@ -278,6 +238,7 @@ width: 100% !important;
 .ul-products {
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 12px;
 }
 
 
@@ -294,4 +255,54 @@ text-decoration: none;
 
 .moodboard-name {
   padding-bottom: 24px;
+}
+
+
+
+
+.fa-pen {
+  color: #252329;
+}
+
+.fa-trash {
+  color: #ffffff;
+}
+
+.section-bottom {
+  gap: 12px;
+  padding-right: 80px;
+  padding-top: 12px;
+}
+
+
+.delete-btn {
+  width: 120px;
+  height: fit-content;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(227, 227, 227);
+    border: 1px solid rgb(229, 87, 87);
+    .fa-trash {
+      color: rgb(229, 87, 87);
+    }
+  }
+}
+
+.edit-btn {
+  width: 120px;
+  height: fit-content;
+  text-align: center;
+  padding: 8px;
+  background:white;
+  color: #252329;
+  text-decoration: none;
+
+  &:hover {
+      background: #D7CFBD;
+  }
 }

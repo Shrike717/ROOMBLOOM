@@ -43,13 +43,14 @@
   </div>
   <div class="row row-3 justify-content-center">
     <div class="section-bottom d-flex justify-content-end col-12">
-      <div class="button-edit">
         <%# <button class="edit-btn">Edit</button> %>
-        <%= link_to "Edit", moodboard_path(moodboard), class: "edit-btn"%>
-      </div>
-      <div class="button-delete">
-        <%= link_to "Delete", moodboard_path(moodboard), class: "delete-btn", data: { "turbo-method": :delete }%>
-      </div>
+      <%= link_to moodboard_path(moodboard), class: "edit-btn" do %>
+      <i class="fa-sharp fa-solid fa-pen"></i>
+      <% end %>
+      <%= link_to moodboard_path(moodboard), class: "delete-btn", data: { "turbo-method": :delete } do %>
+      <i class="fa-sharp fa-solid fa-trash"></i>
+      <% end %>
+
     </div>
   </div>
   <% end %>
